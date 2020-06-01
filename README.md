@@ -12,6 +12,11 @@ This project aims to build a simple website that showcases the film collection f
 
 The major part of the project uses the APIs from https://ghibliapi.herokuapp.com/.
 
+The second API will be OMDb to retrieve poster info: http://www.omdbapi.com/
+
+Additional APIs can be added to post-MVP:
+- IMDb trailer API for movie trailers
+- Wikipedia API for About
 
 
 #### API Data Sample
@@ -47,6 +52,7 @@ Collection Page (Mobile):
 - Home
 - About
 - Collection
+  - Film Preview
 - Film Detail
   - Poster
   - More images
