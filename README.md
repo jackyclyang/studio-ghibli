@@ -43,6 +43,14 @@ Collection Page (Mobile):
 
 ![Collection Page](https://res.cloudinary.com/dvmkqx6v1/image/upload/v1590985536/Mobile_1_o8nwok.png)
 
+## Component Hierarchy
+- Home
+- About
+- Collection
+- Film Detail
+ - Poster
+ - More images
+ - Video
 
 
 ### MVP/PostMVP  
