@@ -6,10 +6,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src='http://www.ghibli.jp/img/totoro.png' className="App-logo" alt="logo" />
-
+        <Link to='/' exact='true'><img src='http://www.ghibli.jp/img/totoro.png' alt="logo" /></Link>
+        <Link to='/collection'>Collection</Link>
+        <Link to='about'>About</Link>
 
       </header>
+      <div className='main'>
+
+      </div>
+
     </div>
   );
 }

@@ -65,13 +65,14 @@ Collection Page (Mobile):
 - A visually appealing home page
 - See the film collection from Studio Ghibli
 - Choose one film and see the details of the film
-- Details include title, descriptions, director, year, poster, more images, and potentially a trailer/clip 
-- Clip/trailer and more images will open up in a modal
+- Details include title, descriptions, director, year, poster 
+- Poster image will be retrieved from the second API
 
 
 #### PostMVP  
-- Add second API to greet users in their native language on the home page
-- Add third API to get "About" info from Wikipedia about the studio
+- More images, and potentially a trailer/clip from the third API (IMDB)
+- Clip/trailer and more images will open up in a modal
+- Add a fourth API to get "About" info from Wikipedia about the studio
 
 ## Project Schedule
 
