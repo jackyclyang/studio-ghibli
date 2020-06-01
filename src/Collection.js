@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
+import FilmPreview from './FilmPreview'
 
 export default class Collection extends Component {
   constructor() {
     super()
-
-    this.state = {
-      allFilms: []
-    }
   }
 
   render() {
     return (
       <div>
         <div>
-          Header
+          <h2>Film Collection</h2>
         </div>
-        {this.props.allFilms.map((film, key) => <div key={film.id}>{film.title}</div>)}
+        <div className="collection">
+          {this.props.allFilms.map((film, key) => <FilmPreview film={film} key={key} />)}
+        </div>
+
       </div>
     )
   }

@@ -38,10 +38,11 @@ class App extends Component {
         </div>
         <div className='main'>
           <Route path='/' exact><img src='https://www.theedgesusu.co.uk/wp-content/uploads/2016/01/studio_ghibli.jpg' alt="studio ghibli characters" className='hero' /></Route>
-          <Route path='/collection'><Collection allFilms={this.state.allFilms} /></Route>
+          <Route path='/collection/'><Collection allFilms={this.state.allFilms} /></Route>
         </div>
-
-        <Footer />
+        <div>
+          <Footer />
+        </div>
       </div>
     );
   }
