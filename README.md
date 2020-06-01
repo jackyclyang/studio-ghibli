@@ -65,7 +65,7 @@ Collection Page (Mobile):
 - A visually appealing home page
 - See the film collection from Studio Ghibli
 - Choose one film and see the details of the film
-- Details include title, descriptions, director, year, poster, more images, and potentially a trailer/clip
+- Details include title, descriptions, director, year, poster, more images, and potentially a trailer/clip 
 - Clip/trailer and more images will open up in a modal
 
 
