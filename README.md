@@ -41,7 +41,7 @@ The major part of the project uses the APIs from https://ghibliapi.herokuapp.com
 ## Wireframes
 Collection Page (Mobile): 
 
-![Collection Page]()
+![Collection Page](https://res.cloudinary.com/dvmkqx6v1/image/upload/v1590985536/Mobile_1_o8nwok.png)
 
 
 
@@ -73,7 +73,7 @@ Collection Page (Mobile):
 
 ## Priority Matrix
 
-![Priority Matrix]()
+![Priority Matrix](https://res.cloudinary.com/dvmkqx6v1/image/upload/v1590985536/Priority_Matrix_hblzqm.png)
 
 
 ## Timeframes
