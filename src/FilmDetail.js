@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 
-export default class FilmDetail extends Component {
+import { withRouter } from 'react-router-dom'
+
+class FilmDetail extends Component {
   render() {
     return (
       <div>
-
+        {this.props.match.params.title}
       </div>
     )
   }
 }
+
+export default withRouter(FilmDetail)

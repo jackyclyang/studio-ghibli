@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
-import FilmPreview from './FilmPreview'
+import FilmList from './FilmList'
+import FilmDetail from './FilmDetail'
 
 export default class Collection extends Component {
   constructor() {
@@ -14,7 +15,13 @@ export default class Collection extends Component {
           <h2>Film Collection</h2>
         </div>
         <div className="collection">
-          {this.props.allFilms.map((film, key) => <FilmPreview film={film} key={key} />)}
+          <Route path='/collection/' exact='true'>
+            {this.props.allFilms.map((film, key) => <FilmList film={film} key={key} />)}
+          </Route>
+          <Route path='/collection/:title'>
+            <FilmDetail />
+          </Route>
+
         </div>
 
       </div>

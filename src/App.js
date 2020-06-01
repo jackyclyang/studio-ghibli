@@ -5,6 +5,7 @@ import axios from 'axios'
 import Collection from './Collection'
 import Header from './Header'
 import Footer from './Footer'
+import FilmDetail from './FilmDetail';
 
 
 class App extends Component {
@@ -39,6 +40,7 @@ class App extends Component {
         <div className='main'>
           <Route path='/' exact><img src='https://www.theedgesusu.co.uk/wp-content/uploads/2016/01/studio_ghibli.jpg' alt="studio ghibli characters" className='hero' /></Route>
           <Route path='/collection/'><Collection allFilms={this.state.allFilms} /></Route>
+
         </div>
         <div>
           <Footer />

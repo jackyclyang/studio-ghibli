@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
 import logo from './Ghibli Header Logo.png'
 import axios from 'axios'
+import FilmDetail from './FilmDetail'
 
 export default class FilmPreview extends Component {
   constructor(props) {
@@ -30,11 +31,11 @@ export default class FilmPreview extends Component {
   render() {
     return (
       <div>
-        <Link to={this.props.film.title} key={this.props.film.id}>
+        <Link to={`/collection/${this.props.film.title}`} key={this.props.film.id}>
           <img src={this.state.poster}></img>
           <div>{this.props.film.title}</div>
         </Link>
-      </div>
+      </div >
     )
   }
 }
