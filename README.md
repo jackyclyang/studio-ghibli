@@ -14,7 +14,7 @@ The major part of the project uses the APIs from https://ghibliapi.herokuapp.com
 
 
 
-#### API Data Sample (Clue)
+#### API Data Sample
 ```json
 [
   {
