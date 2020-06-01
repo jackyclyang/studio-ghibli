@@ -1,68 +1,98 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
 
-## Available Scripts
+## Project Name
 
-In the project directory, you can run:
+Studio Ghibli
 
-### `npm start`
+## Project Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project aims to build a simple website that showcases the film collection from Stuio Ghibli, which creates amazing storytelling and worldbuilding. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## API and Data Sample
 
-### `npm test`
+The major part of the project uses the APIs from https://ghibliapi.herokuapp.com/.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### API Data Sample (Clue)
+```json
+[
+  {
+    "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+    "title": "Castle in the Sky",
+    "description": "The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.",
+    "director": "Hayao Miyazaki",
+    "producer": "Isao Takahata",
+    "release_date": "1986",
+    "rt_score": "95"
+  },
+  {
+    "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
+    "title": "Grave of the Fireflies",
+    "description": "In the latter part of World War II, a boy and his sister, orphaned when their mother is killed in the firebombing of Tokyo, are left to survive on their own in what remains of civilian life in Japan. The plot follows this boy and his sister as they do their best to survive in the Japanese countryside, battling hunger, prejudice, and pride in their own quiet, personal battle.",
+    "director": "Isao Takahata",
+    "producer": "Toru Hara",
+    "release_date": "1988",
+    "rt_score": "97"
+  }
+]
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Wireframes
+Collection Page (Mobile): 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Collection Page]()
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### MVP/PostMVP  
+#### MVP 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- A visually appealing home page
+- See the film collection from Studio Ghibli
+- Choose one film and see the details of the film
+- Details include title, descriptions, director, year, poster, more images, and potentially a trailer/clip
+- Clip/trailer and more images will open up in a modal
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+#### PostMVP  
+- Add second API to greet users in their native language on the home page
+- Add third API to get "About" info from Wikipedia about the studio
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Schedule
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+|  Day | Deliverable | Status
+|---|---| ---|
+|June 1| Project Prompt and Project Approval | 
+|June 2| Core Application Structure and Pseudocode | 
+|June 2| Fetch info from API(s)  | 
+|June 3| React Components and Routes | 
+|June 3| Additonal info | 
+|June 4| MVP and finalize formatting | 
+|June 5| Present | 
 
-### Code Splitting
+## Priority Matrix
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![Priority Matrix]()
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Timeframes
 
-### Making a Progressive Web App
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| HTML Structure | M | 2hrs|  |  |
+| Basic CSS | M | 2hrs|  |  |
+| Fetch films from the API | H | 4hrs|  | |
+| Fetch other info (e.g. location) from the same API | H | 4hrs|  |  |
+| Create React Components and Routes | H | 7hrs|  |  |
+| Fetch more info from other APIs | M | 6hrs| |  |
+| Design and Styling | M | 5hrs|  |  |
+| Total | H | 30hrs|  |  |
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Code Snippet
+```javascript
 
-### Advanced Configuration
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Change Log
+- 
