@@ -48,9 +48,9 @@ Collection Page (Mobile):
 - About
 - Collection
 - Film Detail
- - Poster
- - More images
- - Video
+  - Poster
+  - More images
+  - Video
 
 
 ### MVP/PostMVP  
