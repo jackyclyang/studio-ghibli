@@ -52,12 +52,11 @@ Collection Page (Mobile):
 - Home
 - About
 - Collection
-  - Film Preview
-- Film Detail
-  - Poster
-  - More images
-  - Video
-
+  - Film List
+  - Film Detail
+    - Image
+    - Video
+- CTA
 
 ### MVP/PostMVP  
 #### MVP 

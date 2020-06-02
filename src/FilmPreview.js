@@ -7,9 +7,12 @@ import FilmDetail from './FilmDetail'
 export default class FilmPreview extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       title: this.props.film.title,
-      poster: ''
+      poster: '',
+      ratings: [],
+      imdbID: ''
     }
   }
 
@@ -18,13 +21,20 @@ export default class FilmPreview extends Component {
     console.log(title)
     let URL = 'http://www.omdbapi.com/?apikey=8849bbd&t=' + title
     let rawData = await axios(URL)
+    let poster = rawData.data.Poster
+    let ratings = rawData.data.Ratings
+    let imdbID = rawData.data.imdbID
 
     console.log(rawData.data)
 
     this.setState({
-      poster: rawData.data.Poster
+      title: title,
+      poster: poster,
+      ratings: ratings,
+      imdbID: imdbID
     })
 
+    this.props.setAdditionalInfo(title, poster, ratings, imdbID)
   }
 
 

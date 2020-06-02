@@ -17,18 +17,6 @@ class App extends Component {
     }
   }
 
-  async componentDidMount() {
-    const URL = 'https://ghibliapi.herokuapp.com/films'
-    const rawData = await axios(URL)
-    let filmsData = rawData.data
-
-    console.log(filmsData)
-
-    this.setState({
-      allFilms: filmsData
-    })
-
-  }
 
   render() {
     return (
@@ -38,8 +26,12 @@ class App extends Component {
           <Header />
         </div>
         <div className='main'>
-          <Route path='/' exact><img src='https://www.theedgesusu.co.uk/wp-content/uploads/2016/01/studio_ghibli.jpg' alt="studio ghibli characters" className='hero' /></Route>
-          <Route path='/collection/'><Collection allFilms={this.state.allFilms} /></Route>
+          <Route path='/' exact>
+            <img src='https://www.theedgesusu.co.uk/wp-content/uploads/2016/01/studio_ghibli.jpg' alt="studio ghibli characters" className='hero' />
+          </Route>
+          <Route path='/collection/'>
+            <Collection />
+          </Route>
 
         </div>
         <div>
