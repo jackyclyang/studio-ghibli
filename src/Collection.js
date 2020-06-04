@@ -9,52 +9,79 @@ export default class Collection extends Component {
     super(props)
 
     this.state = {
-      basicInfo: [],
-      additionalInfo: []
+      allFilms: []
     }
   }
+
 
   async componentDidMount() {
-    const URL = 'https://ghibliapi.herokuapp.com/films'
-    const rawData = await axios(URL)
-    let filmsData = rawData.data
 
-    console.log(filmsData)
+    const URL1 = 'https://ghibliapi.herokuapp.com/films'
+    const rawData1 = await axios(URL1)
+    let filmsData1 = rawData1.data
+    let allFilms = []
+
+    filmsData1.forEach(eachFilm => {
+      let film = {
+        title: '',
+        description: '',
+        producer: '',
+        director: '',
+        releaseYear: '',
+        poster: '',
+        ratings: [],
+        imdbID: ''
+      }
+
+      film.title = eachFilm.title
+      film.description = eachFilm.description
+      film.producer = eachFilm.producer
+      film.director = eachFilm.director
+      film.releaseYear = eachFilm.release_date
+      allFilms.push(film)
+
+    })
+
+    let URL2 = 'http://www.omdbapi.com/?apikey=8849bbd&t='
+    // code taught by Mike
+    await Promise.all(allFilms.map(async (film) => {
+      const response = await axios.get(URL2 + film.title)
+      let poster = response.data.Poster
+      let ratings = response.data.Ratings
+      let imdbID = response.data.imdbID
+
+      film.poster = poster
+      film.ratings = ratings
+      film.imdbID = imdbID
+
+    }))
 
     this.setState({
-      basicInfo: filmsData
+      allFilms: allFilms
     })
 
   }
 
-  setAdditionalInfo = (title, poster, ratings, imdbID) => {
-    let addInfo = {
-      title: title,
-      poster: poster,
-      ratings: ratings,
-      imdbID: imdbID
-    }
-
-    let addInfoArray = this.state.additionalInfo
-    addInfoArray.push(addInfo)
-    this.setState({
-      additionalInfo: addInfoArray
-    })
-  }
 
   render() {
+    console.log(this.state.allFilms)
     return (
       <div>
         <Route path='/collection/' exact={true}>
           <div>
             <h2>Film Collection</h2>
+            <form>
+              <input type='text' value='' placeholder="Type here"></input>
+              <input type='submit' value='Search'></input>
+            </form>
           </div>
           <div className="collection">
-            {this.state.basicInfo.map((film, key) => <FilmPreview film={film} key={key} setAdditionalInfo={this.setAdditionalInfo} />)}
+            {this.state.allFilms.length > 0 ? this.state.allFilms.map((film, key) => <FilmPreview film={film} key={key} />) : <img src='https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif'></img>}
           </div>
         </Route>
         <Route path='/collection/:title'>
-          <FilmDetail basicInfo={this.state.basicInfo} additionalInfo={this.state.additionalInfo} />
+          {this.state.allFilms.length > 0 ? <FilmDetail allFilms={this.state.allFilms} /> : <img src='https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif'></img>}
+
         </Route>
 
       </div >
