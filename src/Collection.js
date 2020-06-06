@@ -59,7 +59,6 @@ export default class Collection extends Component {
     this.setState({
       allFilms: allFilms
     })
-
   }
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import Video from './Video'
 import { Link, withRouter } from 'react-router-dom'
 
 class FilmDetail extends Component {
@@ -18,7 +18,8 @@ class FilmDetail extends Component {
       rating2: {},
       rating3: {},
       imdbID: '',
-      videoID: ''
+      videoID: '',
+      hide: true
     }
 
   }
@@ -43,19 +44,34 @@ class FilmDetail extends Component {
     })
     console.log(this.state.imdbID)
 
-    const trailerURL = 'https://imdb-api.com/en/API/YouTubeTrailer/k_7uEj708N/' + this.state.imdbID
+    // const trailerURL = 'https://imdb-api.com/en/API/YouTubeTrailer/k_7uEj708N/' + this.state.imdbID
 
-    //const response = await axios(trailerURL)
+    // const response = await axios(trailerURL)
 
-    //const videoID = response.data.videoId
+    const videoID =
+      // response.data.videoId
 
-    let videoID = 'ByXuk9QqQkk'
+      'ByXuk9QqQkk'
 
     console.log(videoID)
+
     this.setState({
       videoID: videoID
     })
 
+  }
+
+  openModal = () => {
+    console.log('open modal')
+    this.setState({
+      hide: false
+    })
+  }
+
+  closeModal = () => {
+    this.setState({
+      hide: true
+    })
   }
 
   render() {
@@ -73,10 +89,19 @@ class FilmDetail extends Component {
         <p>{this.state.rating2.Source}: {this.state.rating2.Value}</p>
         {this.state.rating3.Source ? <p>{this.state.rating3.Source}: {this.state.rating3.Value}</p> : ''}
 
-        <iframe src={'https://www.youtube.com/embed/' + this.state.videoID} width='600' controls="controls" autoplay="true" />
+        <button onClick={this.openModal}>
+          Watch Trailer
+        </button>
+        {this.state.hide ? '' :
+          <div className='modal' onClick={this.closeModal}>
+            <div class='modal-content'>
+              <div>
+                <Video videoID={this.state.videoID} />
+              </div>
 
+            </div>
 
-
+          </div>}
       </div>
     )
   }
