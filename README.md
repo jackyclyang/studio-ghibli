@@ -49,14 +49,15 @@ Collection Page (Mobile):
 ![Collection Page](https://res.cloudinary.com/dvmkqx6v1/image/upload/v1590985536/Mobile_1_o8nwok.png)
 
 ## Component Hierarchy
-- Home
-- About
-- Collection
-  - Film List
-  - Film Detail
-    - Image
-    - Video
-- CTA
+- App
+  - Header
+  - About
+  - Collection
+    - Film Preview
+    - Film Detail
+      - Video
+  - CTA
+  - Footer
 
 ### MVP/PostMVP  
 #### MVP 
@@ -67,11 +68,10 @@ Collection Page (Mobile):
 - Details include title, descriptions, director, year, poster 
 - Poster image will be retrieved from the second API
 
-
 #### PostMVP  
-- More images, and potentially a trailer/clip from the third API (IMDB)
+- Potentially a trailer/clip from the third API (IMDB)
 - Clip/trailer and more images will open up in a modal
-- Add a fourth API to get "About" info from Wikipedia about the studio
+
 
 ## Project Schedule
 

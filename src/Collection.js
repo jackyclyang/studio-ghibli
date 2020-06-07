@@ -16,7 +16,7 @@ export default class Collection extends Component {
 
   async componentDidMount() {
 
-    const URL1 = 'https://ghibliapi.herokuapp.com/films'
+    const URL1 = 'https://ghibliapi.herokuapp.com/films/'
     const rawData1 = await axios(URL1)
     let filmsData1 = rawData1.data
     let allFilms = []
@@ -45,7 +45,7 @@ export default class Collection extends Component {
     let URL2 = 'https://www.omdbapi.com/?apikey=8849bbd&t='
     // code taught by Mike
     await Promise.all(allFilms.map(async (film) => {
-      const response = await axios.get(URL2 + film.title)
+      const response = await axios.get(URL2 + film.title + '/')
       let poster = response.data.Poster
       let ratings = response.data.Ratings
       let imdbID = response.data.imdbID
