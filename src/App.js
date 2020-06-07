@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import Collection from './Collection'
 import Header from './Header'
 import Footer from './Footer'
 import About from './About'
+import CTA from './CTA'
 
 class App extends Component {
   constructor() {
@@ -20,7 +21,15 @@ class App extends Component {
         <Header />
         <div className='main'>
           <Route path='/' exact={true}>
-            <img src='https://www.theedgesusu.co.uk/wp-content/uploads/2016/01/studio_ghibli.jpg' alt="studio ghibli characters" className='hero' />
+            <div className='hero'>
+              <img src='https://www.theedgesusu.co.uk/wp-content/uploads/2016/01/studio_ghibli.jpg' alt="studio ghibli characters" className='hero-img' />
+              <span className="hero-modal">
+                <Link to="/collection/" exact="true">
+                  <CTA text="View Collection" className="view-collection-button" />
+                </Link>
+              </span>
+            </div>
+
           </Route>
           <Route path='/collection/'>
             <Collection />

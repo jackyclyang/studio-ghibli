@@ -45,14 +45,15 @@ class FilmDetail extends Component {
     })
     console.log(this.state.imdbID)
 
-    // const trailerURL = 'https://imdb-api.com/en/API/YouTubeTrailer/k_7uEj708N/' + this.state.imdbID
+    const trailerURL = 'https://imdb-api.com/en/API/YouTubeTrailer/k_7uEj708N/' + this.state.imdbID
 
-    // const response = await axios(trailerURL)
+    const response = await axios(trailerURL)
 
     const videoID =
-      // response.data.videoId
+      response.data.videoId
 
-      'ByXuk9QqQkk'
+    // Placeholder below to save API calls to IMDb
+    //'ByXuk9QqQkk'
 
     console.log(videoID)
 
@@ -94,7 +95,6 @@ class FilmDetail extends Component {
                 {this.state.rating1.Source}: {this.state.rating1.Value}<br />
                 {this.state.rating2.Source}: {this.state.rating2.Value}
               </div>
-
               {this.state.rating3.Source ? <p>{this.state.rating3.Source}: {this.state.rating3.Value}</p> : ''}
             </div>
             <div>
@@ -104,22 +104,16 @@ class FilmDetail extends Component {
               <Link to="/collection/" exact="true"><CTA text="Back" className="go-back" /></Link>
             </div>
           </div>
-
           <br />
         </div>
-
         {this.state.hide ? '' :
           <div className='modal' onClick={this.closeModal}>
             <div class='modal-content'>
               <div>
                 <Video videoID={this.state.videoID} />
               </div>
-
             </div>
-
           </div>}
-
-
       </div>
     )
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// Learned to add Video card from https://medium.com/@kevinsimper/full-width-youtube-embed-with-react-js-responsive-embed-509de7e7c3bf
 class Video extends Component {
   constructor(props) {
     super(props)

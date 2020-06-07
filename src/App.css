@@ -32,7 +32,6 @@ button:hover{
   display: flex;
   margin: 10px;
 }
-
 .App-header, .App-footer {
   display: flex;
   flex-direction: row;
@@ -61,15 +60,36 @@ button:hover{
   right: 0;
 }
 .hero{
+  position:relative;
+}
+/* Learned from https://codepen.io/wolfcry911/pen/Jgicp */
+.hero .hero-img{
   width: 100%;
   height: auto;
   margin: 0 auto;
+  display:block
 }
+.hero .hero-modal{
+  display:none;
+  text-align:center;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom: 0;
+  right:0;
+  background: rgba(255,255,255,0.4);
+}
+.hero:hover .hero-modal{
+  display:block;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .header-link{
   text-decoration: none;
   color:white;
   margin: 20px;
-
 }
 .header-link:hover{
   text-shadow: 0px 1px 9px white;
@@ -146,6 +166,7 @@ button:hover{
   flex-direction: column;
   justify-content: space-evenly;
 }
+/* Learned modal from my P1 - that's from W3schools */
 .modal {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -164,6 +185,7 @@ button:hover{
   display: flex;
   flex-direction: column;
 }
+
 .video iframe{
   margin: 0 auto;
 }
