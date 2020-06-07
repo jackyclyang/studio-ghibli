@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Video from './Video'
 import { Link, withRouter } from 'react-router-dom'
+import CTA from './CTA'
 
 class FilmDetail extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class FilmDetail extends Component {
   }
 
   async componentDidMount() {
-
+    window.scrollTo(0, 0)
     const film = await this.props.allFilms.find(film =>
       film.title === this.props.match.params.title
     )
@@ -77,21 +78,36 @@ class FilmDetail extends Component {
   render() {
     return (
       <div>
-        <Link to="/collection/" exact="true">Back</Link>
-        <br />
-        <img src={this.state.poster}></img>
-        <h2>{this.state.title}</h2>
-        <p>{this.state.description}</p>
-        <p>Producer: {this.state.producer}</p>
-        <p>Director: {this.state.director}</p>
-        <p>Release Year: {this.state.releaseYear}</p>
-        <p>{this.state.rating1.Source}: {this.state.rating1.Value}</p>
-        <p>{this.state.rating2.Source}: {this.state.rating2.Value}</p>
-        {this.state.rating3.Source ? <p>{this.state.rating3.Source}: {this.state.rating3.Value}</p> : ''}
+        <div className="film-details">
+          <div>
+            <img className='film-poster-detail' src={this.state.poster}></img>
+          </div>
+          <div className='film-details-content'>
+            <div className='film-details-title'>{this.state.title}</div>
+            <p className='film-details-description'>{this.state.description}</p>
+            <div className='film-details-others'>
+              <div>Producer: {this.state.producer}</div>
+              <div>Director: {this.state.director}</div>
+              <p>Release Year: {this.state.releaseYear}</p>
+              <div className='film-details-ratings'>
+                Ratings: <br />
+                {this.state.rating1.Source}: {this.state.rating1.Value}<br />
+                {this.state.rating2.Source}: {this.state.rating2.Value}
+              </div>
 
-        <button onClick={this.openModal}>
-          Watch Trailer
-        </button>
+              {this.state.rating3.Source ? <p>{this.state.rating3.Source}: {this.state.rating3.Value}</p> : ''}
+            </div>
+            <div>
+              <CTA onClick={this.openModal} text='Watch Trailer' />
+            </div>
+            <div>
+              <Link to="/collection/" exact="true"><CTA text="Back" className="go-back" /></Link>
+            </div>
+          </div>
+
+          <br />
+        </div>
+
         {this.state.hide ? '' :
           <div className='modal' onClick={this.closeModal}>
             <div class='modal-content'>
@@ -102,6 +118,8 @@ class FilmDetail extends Component {
             </div>
 
           </div>}
+
+
       </div>
     )
   }

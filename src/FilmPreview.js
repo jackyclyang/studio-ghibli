@@ -8,11 +8,11 @@ export default class FilmPreview extends Component {
   }
 
   render() {
-    console.log(this.props)
+
     return (
-      <div>
+      <div className="film-preview">
         <Link to={`/collection/${this.props.film.title}`} key={this.props.film.id}>
-          <img src={this.props.film.poster}></img>
+          <img src={this.props.film.poster} className="film-poster"></img>
           <div>{this.props.film.title}</div>
         </Link>
       </div >

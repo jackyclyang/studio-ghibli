@@ -1,12 +1,15 @@
-
 a{
   text-decoration: none;
+  color: rgb(36, 36, 36);
+}
+a:hover{
+  color:grey;
 }
 button{
   font-family: 'Roboto Condensed', Helvetica, sans-serif;
   margin: 30px auto 14px auto;
-  padding: 6px 30px;
-  font-size: 24px;
+  padding: 8px 30px;
+  font-size: 18px;
   border-radius: 24px;
   background-image: linear-gradient(to bottom right, rgb(74, 183, 255), rgb(197, 146, 255));
   border: 2px solid white;
@@ -15,21 +18,19 @@ button{
 button:hover{
   cursor: pointer;
   border: 2px solid white;
-  box-shadow: 0px 4px 10px rgb(65, 65, 65);
-  transition: 0.3s;
+  box-shadow: 0px 2px 10px rgb(74, 131, 255);
+  transition: 0.2s;
 }
 .App {
   text-align: center;
   font-family:'Roboto', sans-serif;
   font-size: 20px;
-  min-height: 100vh;
 }
-
 .App-logo {
   max-height: 80px;
   pointer-events: none;
   display: flex;
-  margin: 4px 4px;
+  margin: 10px;
 }
 
 .App-header, .App-footer {
@@ -38,8 +39,9 @@ button:hover{
   align-items:center;
   justify-content: space-between;
   color: white;
-  width: 100%;
-  height: auto;
+  left:0;
+  right:0;
+  margin: 0 auto;
   background-image: linear-gradient(to bottom right, rgb(74, 183, 255), rgb(197, 146, 255));
 }
 .App-footer{
@@ -55,6 +57,8 @@ button:hover{
 .main{
   background-color: white;
   margin: 0 auto;
+  left:0;
+  right: 0;
 }
 .hero{
   width: 100%;
@@ -64,20 +68,83 @@ button:hover{
 .header-link{
   text-decoration: none;
   color:white;
-  margin: 0 20px;
+  margin: 20px;
+
 }
 .header-link:hover{
   text-shadow: 0px 1px 9px white;
   font-weight: 600;
 }
 .non-home-links{
-  margin: 0 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin: 20px 30px;
 }
 .collection{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin: 10px 40px;
+}
+.film-preview{
+  margin: 30px 5px;
+  font-weight: 600;
+  padding: 20px 10px;
+  border-width: 1px;
+  border-color:white;
+  border-radius: 10px;
+}
+.film-preview:hover{
+  opacity: 90%;
+  box-shadow: 0px 4px 10px grey;
+}
+.film-poster{
+  width: 300px;
+  height: 450px;
+  border-width: 1px;
+  border-color:white;
+  border-radius: 4px;
+  background-color:white;
+  margin: 4px;
+}
+.film-poster-detail{
+  height: 500px;
+  border-width: 1px;
+  border-color:white;
+  border-radius: 4px;
+  margin: 4px;
+}
+.film-details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 60px 20px;
+}
+.film-details-content{
+  display:flex;
+  flex-direction: column;
+  font-size: 18px;
+  align-items: flex-start;
+  text-align: left;
+  justify-content:left;
+  margin: 2px 30px;
+  max-width: 600px;
+}
+.film-details-title{
+  font-size: 32px;
+  text-align: left;
+}
+.film-details-description{
+  font-size: 18px;
+}
+.film-details-others{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .modal {
   position: fixed; /* Stay in place */
@@ -100,16 +167,132 @@ button:hover{
 .video iframe{
   margin: 0 auto;
 }
-.close {
-  color: red;
-  float: right;
-  font-weight: bold;
-  margin: 20px;
+.go-back{
+  background-image:none;
+  background-color: white;
+  color: grey;
+  border-color: grey;
+  margin: 10px 0;
 }
-.close:hover,
-.close:focus {
-  color: rgb(51, 59, 181);
-  text-shadow: 1px 4px 10px rgb(65, 65, 65);
-  text-decoration: none;
+.go-back:hover{
+  color:rgb(74, 183, 255);
+  border-color:rgb(74, 183, 255);
   cursor: pointer;
+  box-shadow: none;
+}
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0px 60px;
+}
+.about-section{
+  margin: 10px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+  font-size: 18px;
+}
+.about-text{
+  margin: 10px;
+  max-width: 500px;
+}
+.about-img{
+  margin: 20px;
+  border-radius: 10px;
+}
+@media(max-width: 1000px){
+  .about-section{
+    margin: 10px 60px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .about-text{
+    margin: 10px 0;
+  }
+  .about-img{
+    margin: 20px;
+  }
+}
+@media (max-width: 650px){
+  .film-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 40px 0;
+  }
+  .film-details-content{
+    display:flex;
+    margin: 0 auto;
+    flex-direction: column;
+    font-size: 18px;
+    align-items: flex-start;
+    text-align: left;
+    justify-content:left;
+    width: 340px;
+  }
+  .about-section{
+    margin: 10px 30px;
+  }
+  .about-text{
+    margin: 10px;
+    font-size: 16px;
+  }
+  .about-img{
+    margin: 30px;
+    width: 440px;
+  }
+}
+@media (max-width: 450px){
+  .film-poster{
+    width: 240px;
+    height: 360px;
+  }
+  .film-details{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin: 30px 0;
+  }
+  .film-poster-detail{
+    width: 240px;
+    height: 360px;
+  }
+  .film-details-content{
+    width: 240px;
+    padding:10px;
+  }
+  .film-details-title{
+    font-size: 20px;
+  }
+  .film-details-description{
+    font-size: 16px;
+  }
+  .film-details-others{
+    font-size: 16px;
+  }
+  button{
+    font-size: 16px;
+  }
+  .App-header{
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .about-section{
+    margin: 10px 10px;
+  }
+  .about-text{
+    margin: 10px;
+    font-size: 16px;
+  }
+  .about-img{
+    margin: 30px 10px;
+    width: 240px;
+  }
+
 }
