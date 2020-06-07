@@ -42,7 +42,7 @@ export default class Collection extends Component {
 
     })
 
-    let URL2 = 'http://www.omdbapi.com/?apikey=8849bbd&t='
+    let URL2 = 'https://www.omdbapi.com/?apikey=8849bbd&t='
     // code taught by Mike
     await Promise.all(allFilms.map(async (film) => {
       const response = await axios.get(URL2 + film.title)
