@@ -13,7 +13,6 @@ export default class Collection extends Component {
     }
   }
 
-
   async componentDidMount() {
 
     const URL1 = 'https://ghibliapi.herokuapp.com/films/'
@@ -69,10 +68,6 @@ export default class Collection extends Component {
         <Route path='/collection/' exact={true}>
           <div>
             <h2>Film Collection</h2>
-            {/* <form>
-              <input type='text' value='' placeholder="Type here"></input>
-              <input type='submit' value='Search'></input>
-            </form> */}
           </div>
           <div className="collection">
             {this.state.allFilms.length > 0 ? this.state.allFilms.map((film, key) => <FilmPreview film={film} key={key} />) : <img src='https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif'></img>}

@@ -65,7 +65,7 @@ Collection Page (Mobile):
 - A visually appealing home page
 - See the film collection from Studio Ghibli
 - Choose one film and see the details of the film
-- Details include title, descriptions, director, year, poster 
+- Details include title, descriptions, director, year, and poster 
 - Poster image will be retrieved from the second API
 
 #### PostMVP  
@@ -77,12 +77,12 @@ Collection Page (Mobile):
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|June 1| Project Prompt and Project Approval | 
-|June 2| Core Application Structure and Pseudocode | 
-|June 2| Fetch info from API(s)  | 
-|June 3| React Components and Routes | 
-|June 3| Additonal info | 
-|June 4| MVP and finalize formatting | 
+|June 1| Project Prompt and Project Approval | Complete
+|June 2| Core Application Structure and Pseudocode | Complete
+|June 2| Fetch info from API(s)  | Complete
+|June 3| React Components and Routes | Complete
+|June 3| Additonal info | Complete
+|June 4| MVP and finalize formatting | Complete
 |June 5| Present | 
 
 ## Priority Matrix
@@ -94,19 +94,33 @@ Collection Page (Mobile):
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML Structure | M | 2hrs|  |  |
-| Basic CSS | M | 2hrs|  |  |
-| Fetch films from the API | H | 4hrs|  | |
-| Fetch other info (e.g. location) from the same API | H | 4hrs|  |  |
-| Create React Components and Routes | H | 7hrs|  |  |
-| Fetch more info from other APIs | M | 6hrs| |  |
-| Design and Styling | M | 5hrs|  |  |
-| Total | H | 30hrs|  |  |
+| HTML Structure | M | 2hrs| 2hrs | 2hrs |
+| Basic CSS | M | 2hrs| 2hrs | 2hrs |
+| Fetch films from the API | H | 4hrs| 2hrs | 2hrs|
+| Create React Components and Routes | H | 7hrs| 5hrs | 5hrs |
+| Fetch more info from other APIs | M | 6hrs| 4hrs | 4hrs |
+| Design and Styling | M | 5hrs| 6hrs | 6hrs |
+| Other Post-MVP Features| H | 4hrs| 6hrs | 6hrs |
+| Total | H | 30hrs| 28hrs | 28hrs |
 
 ## Code Snippet
 ```javascript
-
+export default class FilmPreview extends Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <div className="film-preview">
+        <Link to={`/collection/${this.props.film.title}`} key={this.props.film.id}>
+          <img src={this.props.film.poster} className="film-poster"></img>
+          <div>{this.props.film.title}</div>
+        </Link>
+      </div >
+    )
+  }
+}
 ```
 
 ## Change Log
-- 
+- Added post-MVP features

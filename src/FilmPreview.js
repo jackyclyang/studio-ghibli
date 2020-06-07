@@ -8,7 +8,6 @@ export default class FilmPreview extends Component {
   }
 
   render() {
-
     return (
       <div className="film-preview">
         <Link to={`/collection/${this.props.film.title}`} key={this.props.film.id}>
