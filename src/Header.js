@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import logo from './Ghibli Header Logo.png'
-import hamburger from './menu.png'
 
 export default class Header extends Component {
 
