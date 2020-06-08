@@ -75,9 +75,7 @@ export default class Collection extends Component {
         </Route>
         <Route path='/collection/:title'>
           {this.state.allFilms.length > 0 ? <FilmDetail allFilms={this.state.allFilms} /> : <img src='https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif'></img>}
-
         </Route>
-
       </div >
     )
   }

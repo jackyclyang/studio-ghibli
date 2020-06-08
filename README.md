@@ -105,21 +105,24 @@ Collection Page (Mobile):
 
 ## Code Snippet
 ```javascript
-export default class FilmPreview extends Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
+    console.log(this.state.allFilms)
     return (
-      <div className="film-preview">
-        <Link to={`/collection/${this.props.film.title}`} key={this.props.film.id}>
-          <img src={this.props.film.poster} className="film-poster"></img>
-          <div>{this.props.film.title}</div>
-        </Link>
+      <div>
+        <Route path='/collection/' exact={true}>
+          <div>
+            <h2>Film Collection</h2>
+          </div>
+          <div className="collection">
+            {this.state.allFilms.length > 0 ? this.state.allFilms.map((film, key) => <FilmPreview film={film} key={key} />) : <img src='https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif'></img>}
+          </div>
+        </Route>
+        <Route path='/collection/:title'>
+          {this.state.allFilms.length > 0 ? <FilmDetail allFilms={this.state.allFilms} /> : <img src='https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif'></img>}
+        </Route>
       </div >
     )
   }
-}
 ```
 
 ## Change Log
