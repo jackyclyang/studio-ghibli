@@ -46,9 +46,10 @@ button:hover{
 .App-footer{
   background-image: none;
   display: flex; 
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   font-size: 12px;
-  padding: 10px;
+  padding: 20px;
   height: 100%;
   margin: 0 auto;
   color: grey;
