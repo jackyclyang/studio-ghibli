@@ -13,11 +13,9 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <div className="App">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
-
         <Header />
         <div className='main'>
           <Route path='/' exact={true}>
@@ -29,7 +27,6 @@ class App extends Component {
                 </Link>
               </span>
             </div>
-
           </Route>
           <Route path='/collection/'>
             <Collection />
@@ -37,7 +34,6 @@ class App extends Component {
           <Route path='/about/'>
             <About />
           </Route>
-
         </div>
         <div>
           <Footer />

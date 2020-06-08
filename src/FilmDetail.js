@@ -22,7 +22,6 @@ class FilmDetail extends Component {
       videoID: '',
       hide: true
     }
-
   }
 
   async componentDidMount() {
@@ -54,8 +53,6 @@ class FilmDetail extends Component {
 
     // Placeholder below to save API calls to IMDb
     //'ByXuk9QqQkk'
-
-    console.log(videoID)
 
     this.setState({
       videoID: videoID
