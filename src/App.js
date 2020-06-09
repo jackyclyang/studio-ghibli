@@ -13,6 +13,7 @@ class App extends Component {
   }
 
   render() {
+    document.title = "Studio Ghibli"
     return (
       <div className="App">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>

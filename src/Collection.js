@@ -14,7 +14,6 @@ export default class Collection extends Component {
   }
 
   async componentDidMount() {
-
     const URL1 = 'https://ghibliapi.herokuapp.com/films/'
     const rawData1 = await axios(URL1)
     let filmsData1 = rawData1.data
@@ -62,15 +61,14 @@ export default class Collection extends Component {
 
 
   render() {
-    console.log(this.state.allFilms)
     return (
       <div>
         <Route path='/collection/' exact={true}>
           <div>
-            <h2>Film Collection</h2>
+            <h2 className="page-title"> - Film Collection - </h2>
           </div>
           <div className="collection">
-            {this.state.allFilms.length > 0 ? this.state.allFilms.map((film, key) => <FilmPreview film={film} key={key} />) : <img src='https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif'></img>}
+            {this.state.allFilms.length > 0 ? this.state.allFilms.map((film, key) => <FilmPreview film={film} key={key} />) : <img src='https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif' height="220px"></img>}
           </div>
         </Route>
         <Route path='/collection/:title'>

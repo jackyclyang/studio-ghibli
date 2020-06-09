@@ -6,7 +6,7 @@ export default class About extends Component {
   render() {
     return (
       <div classname='about'>
-        <h2>About Studio Ghibli</h2>
+        <h2 className="page-title"> - About Studio Ghibli - </h2>
         <div className='about-section'>
 
           <p className='about-text'>Studio Ghibli Inc. (Japanese: 株式会社スタジオジブリ, Hepburn: Kabushiki gaisha Sutajio Jiburi) is a Japanese animation film studio headquartered in Koganei, Tokyo, Japan. The studio is best known for its animated feature films. It was founded on 15 June 1985 by directors Hayao Miyazaki and Isao Takahata and producer Toshio Suzuki with funding by Tokuma Shoten. </p>
